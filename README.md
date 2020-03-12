@@ -37,7 +37,7 @@
 		└─ webapp
 		    └── WEB-INF
 	             └── jsp
-                      └── home.jsp
+	                  └── home.jsp
 	```
 2. @RestController → @Controller  
 	```txt

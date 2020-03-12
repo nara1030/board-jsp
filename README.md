@@ -36,8 +36,8 @@
 		│   └── application.yml
 		└─ webapp
 		    └── WEB-INF
-			     └── jsp
-				      └── home.jsp
+			    └── jsp
+				    └── home.jsp
 	```
 2. @RestController → @Controller  
 	```txt
@@ -96,7 +96,7 @@
 5. JSTL ERROR
 	* [Don't know how to iterate over supplied "items"](https://sshbug.tistory.com/213): forEach문에 넣어준 데이터가 리스트 타입인지 확인 필요
 	* 발생 에러 메세지  
-		<img src="./img/jstl_error_01.png" width="300" height="700"></br>
+		<img src="./img/jstl_error_01.png" width="800" height="700"></br>
 6. .
 7. .
 

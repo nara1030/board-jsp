@@ -63,15 +63,4 @@ public class SearchService {
                 .limit(6)
                 .collect(Collectors.toList());
     }
-
-    public BookItems test(String query) {
-        UriBuilder uriBuilder = new UriBuilder(uri);
-        searchUri = uriBuilder.createUrl(Category.BOOK.getCategory(), query);
-
-        logger.debug("url : {}", searchUri);
-
-        logger.info("확인1: {}", restTemplate.exchange(searchUri, HttpMethod.GET, new HttpEntity<>(httpHeaders), BookItems.class));
-        logger.info("확인2: {}", restTemplate.exchange(searchUri, HttpMethod.GET, new HttpEntity<>(httpHeaders), BookItems.class).getBody());
-        return restTemplate.exchange(searchUri, HttpMethod.GET, new HttpEntity<>(httpHeaders), BookItems.class).getBody();
-    }
 }

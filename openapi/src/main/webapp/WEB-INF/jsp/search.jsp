@@ -9,51 +9,115 @@
     <title>책/영화 조회</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        * {box-sizing: border-box;}
+        .topnav {
+            overflow: hidden;
+            background-color: #e9e9e9;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1200px;
+        }
+        .topnav input[type=text] {
+            float: right;
+            padding: 3px;
+            margin-top: 8px;
+            margin-right: 16px;
+            border: none;
+            font-size: 17px;
+        }
+        @media screen and (max-width: 600px) {
+            .topnav input[type=text] {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+        .book-container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1300px;
+            height: 250px;
+            border: 1px solid #ccc;
+        }
+        .movie-container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1300px;
+            height: 275px;
+            border: 1px solid #ccc;
+        }
+        .recommended {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1200px;
+            height: 25px;
+            border: 1px solid #ccc;
+        }
+        .inner-container {
+            width: 200px;
+            height: 100%;
+            border: 1px solid #ccc;
+        }
+        ul li {
+            list-style: none;
+            float: left;
+        }
+        .text-container {
+            width: 200px;
+            height: 25px;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: 125px;
+        }
+    </style>
 </head>
 <body>
-    <div class = "container-1">
-        <table class = "table table-striped">
-            <thead>
-                <tr>
-                    <th>도서명</th>
-                    <th>저자</th>
-                    <th>가격</th>
-                </tr>
-            </thead>
-            <tbody>
+    <div class="topnav">
+        <form action="/ko-KR/search" method="get">
+            <input type="text" name="query" placeholder="책/영화명 입력(Enter)">
+        </form>
+    </div>
+    <section class="book-container">
+        <div class="recommended">추천 책</div>
+        <div>
+            <ul>
                 <c:forEach items="${items.bookItems}" var="book">
-                    <tr>
-                        <th>${book.title}</th>
-                        <th>${book.author}</th>
-                        <th>${book.price}</th>
-                    </tr>
+                    <li class="inner-container">
+                        <div class="img-container"><img src="${book.image}"></div>
+                        <div class="text-container">${book.title}</div>
+                        <div class="text-container">${book.author}</div>
+                        <div class="text-container">${book.price}</div>
+                    </li>
                 </c:forEach>
-            </tbody>
-        </table>
-    </div>
-    <div>
-        <table class = "table table-striped">
-            <thead>
-            <tr>
-                <th>영화명</th>
-                <th>감독</th>
-                <th>제작년도</th>
-                <th>배우</th>
-                <th>평점</th>
-            </tr>
-            </thead>
-            <tbody>
+            </ul>
+        </div>
+    </section>
+    <section class="movie-container">
+        <div class="recommended">추천 영화</div>
+        <div>
+            <ul>
                 <c:forEach items="${items.movieItems}" var="movie">
-                    <tr>
-                        <th>${movie.title}</th>
-                        <th>${movie.director}</th>
-                        <th>${movie.pubDate}</th>
-                        <th>${movie.actor}</th>
-                        <th>${movie.userRating}</th>
-                    </tr>
+                    <li class="inner-container">
+                        <div class="img-container"><img src="${movie.image}"></div>
+                        <div class="text-container">${movie.title}</div>
+                        <div class="text-container">${movie.director}</div>
+                        <div class="text-container">${movie.actor}</div>
+                        <div class="text-container">${movie.userRating}</div>
+                    </li>
                 </c:forEach>
-            </tbody>
-        </table>
-    </div>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>

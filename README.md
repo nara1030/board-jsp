@@ -80,7 +80,27 @@
 	- 참고
 	   - https://www.w3schools.com/howto/howto_css_searchbar.asp
 	```
-7. .
+7. API 엔드포인트 수정  
+	```txt
+	- 엔드 포인트 확장(왓챠 참고)
+	   1. 직접 접근 혹은 검색창 미입력: http://localhost:8084/ko-KR/search
+	   2. 검색어 입력: http://localhost:8084/ko-KR/search?query=love
+	- 수정 코드 발췌
+	    @GetMapping("search")
+		public String searchData(@RequestParam(required = false) String query, Model model) {
+			/*
+			 * 1. requried = false: o, @Nullable: x
+			 * 2. .equals()가 우선이면 검색창으로 ""이 넘어올 때는 맞으나 Null일 땐 NPE 발생
+			 */
+			if (query == null || query.equals("")) {
+				query = "happy";
+			}
+		}
+	- TODO: 검색창에 미입력("") 시와 직접 접근(null) 시 URL 통일
+	   - http://localhost:8084/ko-KR/search
+	   - http://localhost:8084/ko-KR/search?query=
+	```
+8. .
 
 ##### [목차로 이동](#목차)
 
@@ -98,6 +118,10 @@
 	* 발생 에러 메세지  
 		<img src="./img/jstl_error_01.png" width="800" height="700"></br>
 6. .
-7. .
+7. @Nullable & required = false
+	* [Can @Nullable be used in place of (required=false) for a @RequestParam controller method parameter?](https://stackoverflow.com/questions/58142505/can-nullable-be-used-in-place-of-required-false-for-a-requestparam-controller)
+	* 아래 로그를 보면 쿼리 받을 때 공백("")과 Null을 구분  
+		<img src="./img/npe_01.png" width="800" height="550"></br>
+8. .
 
 ##### [목차로 이동](#목차)

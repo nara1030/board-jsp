@@ -100,7 +100,23 @@
 	   - http://localhost:8084/ko-KR/search
 	   - http://localhost:8084/ko-KR/search?query=
 	```
-8. .
+8. Tiles 적용  
+	```txt
+	추후 공부 필요
+	
+	- ViewResolver 설정 확인(기존보다 우선 적용되도록 세팅)
+	- 동적 매핑
+	- 스프링 부트에서는 Config를 자바빈으로 설정(!!)
+	   1. WebMvcConfigurer 구현
+	   2. TilesViewResolver or UrlBasedViewResolver
+	- https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp
+	- 참고
+	   - https://www.baeldung.com/spring-mvc-apache-tiles
+	   - https://www.devglan.com/spring-boot/spring-boot-mvc-apache-tiles-example
+	   - https://www.codeproject.com/Articles/5249193/Spring-Boot-Web-Application-Development-using-JSTL
+	   - https://www.hanumoka.net/2018/07/31/spring-20180731-spring4-mvc-tiles3/
+	```
+9. .
 
 ##### [목차로 이동](#목차)
 
@@ -123,5 +139,6 @@
 	* 아래 로그를 보면 쿼리 받을 때 공백("")과 Null을 구분  
 		<img src="./img/npe_01.png" width="800" height="550"></br>
 8. .
+9. .
 
 ##### [목차로 이동](#목차)

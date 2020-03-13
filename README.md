@@ -87,15 +87,15 @@
 	   2. 검색어 입력: http://localhost:8084/ko-KR/search?query=love
 	- 수정 코드 발췌
 	    @GetMapping("search")
-		public String searchData(@RequestParam(required = false) String query, Model model) {
-			/*
-			 * 1. requried = false: o, @Nullable: x
-			 * 2. .equals()가 우선이면 검색창으로 ""이 넘어올 때는 맞으나 Null일 땐 NPE 발생
-			 */
-			if (query == null || query.equals("")) {
-				query = "happy";
-			}
-		}
+	    public String searchData(@RequestParam(required = false) String query, Model model) {
+		    /*
+		     * 1. requried = false: o, @Nullable: x
+		     * 2. .equals()가 우선이면 검색창으로 ""이 넘어올 때는 맞으나 Null일 땐 NPE 발생
+		     */
+		    if (query == null || query.equals("")) {
+			    query = "happy";
+		    }
+	    }
 	- TODO: 검색창에 미입력("") 시와 직접 접근(null) 시 URL 통일
 	   - http://localhost:8084/ko-KR/search
 	   - http://localhost:8084/ko-KR/search?query=

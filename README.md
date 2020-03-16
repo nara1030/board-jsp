@@ -48,9 +48,11 @@
 	```
 3. HTML 문서 Table 스타일 적용  
 	```txt
-	- head 태그 안에 다음 두 가지 추가
+	- head 태그 안에 다음 세 가지 추가
 	   1. <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	   2. <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	   3. Uncaught Error: Bootstrap's JavaScript requires jQuery
+	      - 부트스트랩 선언에 앞서 jQuery 선언 필요(아래 링크 참고)
 	- 참고
 	   - https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_table_striped&stacked=h
 	```
@@ -122,13 +124,14 @@
 	   - Spring
 	      - https://www.baeldung.com/spring-xml-vs-java-config
 	      - https://gigas-blog.tistory.com/115
+	   - iframe
+	      - https://okky.kr/article/318388
 	```
 9. .
 
 ##### [목차로 이동](#목차)
 
 ## 참고
-
 1. [Spring Boot와 JSP 연동 방법](https://mia-dahae.tistory.com/131)
 2. @RestController → @Controller
 	* [Spring Controller 리턴타입](http://wonwoo.ml/index.php/post/2007)

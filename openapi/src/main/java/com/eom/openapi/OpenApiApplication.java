@@ -3,6 +3,7 @@ package com.eom.openapi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// Jar
 @SpringBootApplication
 public class OpenApiApplication {
     public static void main(String[] args) {

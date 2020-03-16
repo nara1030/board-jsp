@@ -128,6 +128,7 @@
 ##### [목차로 이동](#목차)
 
 ## 참고
+
 1. [Spring Boot와 JSP 연동 방법](https://mia-dahae.tistory.com/131)
 2. @RestController → @Controller
 	* [Spring Controller 리턴타입](http://wonwoo.ml/index.php/post/2007)

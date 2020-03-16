@@ -102,19 +102,26 @@
 	```
 8. Tiles 적용  
 	```txt
-	추후 공부 필요
-	
-	- ViewResolver 설정 확인(기존보다 우선 적용되도록 세팅)
-	- 동적 매핑
-	- 스프링 부트에서는 Config를 자바빈으로 설정(!!)
-	   1. WebMvcConfigurer 구현
-	   2. TilesViewResolver or UrlBasedViewResolver
-	- https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp
+	- 페이지가 두 개이므로 공통 적용 위해 고려
+	   - https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp
+	- 고민
+	   1. 스프링 부트는 스프링과 다르게 자바빈 Config 설정
+	      (ViewResolver: TilesViewResolver or UrlBasedViewResolver)
+	   2. 처음에는 jar 파일을 war 파일로 패키징 해서 tomcat에 배포하는 방법 고려했으나 실패
+	- 에러
+	   1. java.lang.NoClassDefFoundError: org/apache/tiles/request/servlet/ServletApplicationContext
+	      → 의존성(tiles-request-servlet) 추가(build.gradle)
+	   2. java.lang.NoSuchMethodError: 'void org.apache.tiles.startup.TilesInitializer.initialize(org.apache.tiles.request.ApplicationContext)'
+	      → tiles-jsp 버전 변경(2.2.2 → 3.0.7)
 	- 참고
-	   - https://www.baeldung.com/spring-mvc-apache-tiles
-	   - https://www.devglan.com/spring-boot/spring-boot-mvc-apache-tiles-example
-	   - https://www.codeproject.com/Articles/5249193/Spring-Boot-Web-Application-Development-using-JSTL
-	   - https://www.hanumoka.net/2018/07/31/spring-20180731-spring4-mvc-tiles3/
+	   - Tiles
+	      - https://www.baeldung.com/spring-mvc-apache-tiles
+	      - https://www.devglan.com/spring-boot/spring-boot-mvc-apache-tiles-example
+	      - https://www.codeproject.com/Articles/5249193/Spring-Boot-Web-Application-Development-using-JSTL
+	      - https://www.hanumoka.net/2018/07/31/spring-20180731-spring4-mvc-tiles3/
+	   - Spring
+	      - https://www.baeldung.com/spring-xml-vs-java-config
+	      - https://gigas-blog.tistory.com/115
 	```
 9. .
 
@@ -138,7 +145,12 @@
 	* [Can @Nullable be used in place of (required=false) for a @RequestParam controller method parameter?](https://stackoverflow.com/questions/58142505/can-nullable-be-used-in-place-of-required-false-for-a-requestparam-controller)
 	* 아래 로그를 보면 쿼리 받을 때 공백("")과 Null을 구분  
 		<img src="./img/npe_01.png" width="800" height="550"></br>
-8. .
+8. Tiles ERROR
+	* [java.lang.NoClassDefFoundError](https://stackoverflow.com/questions/52392925/spring-4-with-tiles-3-error-noclassdeffounderror-org-apache-tiles-request-appli)  
+		<img src="./img/tiles_error_01.png" width="800" height="500"></br>
+	* [java.lang.NoSuchMethodError](https://stackoverflow.com/questions/1048779/when-do-we-get-java-lang-nosuchmethoderror-even-when-the-jar-class-has-the-parti)  
+		<img src="./img/tiles_error_02.png" width="800" height="500"></br>
+	
 9. .
 
 ##### [목차로 이동](#목차)

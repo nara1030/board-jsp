@@ -132,6 +132,15 @@
 ##### [목차로 이동](#목차)
 
 ## 참고
+1. response 객체는 @Getter만 사용  
+	```txt
+	- BookItem, MovieItems/MovieItem은 @Getter만 설정
+	- 즉, 생성자 및 @Setter 사용 안하는데 데이터가 Service Layer에서 어떻게 담길까? 
+	```
+2. .
+
+- - -
+
 1. [Spring Boot와 JSP 연동 방법](https://mia-dahae.tistory.com/131)
 2. @RestController → @Controller
 	* [Spring Controller 리턴타입](http://wonwoo.ml/index.php/post/2007)

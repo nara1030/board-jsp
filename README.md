@@ -115,6 +115,7 @@
 	      → 의존성(tiles-request-servlet) 추가(build.gradle)
 	   2. java.lang.NoSuchMethodError: 'void org.apache.tiles.startup.TilesInitializer.initialize(org.apache.tiles.request.ApplicationContext)'
 	      → tiles-jsp 버전 변경(2.2.2 → 3.0.7)
+	   3. 검색어 한글 안 먹음(ex. spring: o, 봄: x)
 	- 참고
 	   - Tiles
 	      - https://www.baeldung.com/spring-mvc-apache-tiles
@@ -137,7 +138,37 @@
 	- BookItem, MovieItems/MovieItem은 @Getter만 설정
 	- 즉, 생성자 및 @Setter 사용 안하는데 데이터가 Service Layer에서 어떻게 담길까? 
 	```
-2. .
+2. @RestController 리턴 형식 확인(JSON)  
+	```txt
+	/*
+	 * http://localhost:8080/home/map?shape=동그라미&color=노란색
+	 * {"shape":"동그라미","color":"안녕"}
+	 */
+	@RequestMapping("/home/map")
+	public Map<String, Object> getMap(@RequestParam Map<String, Object> param) {
+		return param;
+	}
+	
+	/*
+	 * http://localhost:8080/home/list
+	 * [10,true,"동그라미",{"color":"노란색","radius","5px"}]
+	 */
+	@RequestMapping("/home/list")
+	public List<Object> getList() {
+		List<Object> list = new ArrayList<>();
+		list.add(10);
+		list.add(true);
+		list.add("동그라미");
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("color", "노란색");
+		map.put("radius", "5px");
+		list.add(map);
+		
+		return list;
+	}
+	```
+3. .
 
 - - -
 

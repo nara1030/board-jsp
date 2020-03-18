@@ -15,9 +15,7 @@ public class TilesConfig {
     @Bean
     public TilesConfigurer tilesConfigurer() {
         final TilesConfigurer tilesConfigurer = new TilesConfigurer();
-        LOGGER.info(" Logger 정보: {}", tilesConfigurer);
         tilesConfigurer.setDefinitions(new String[]{"/WEB-INF/tiles.xml"});
-        LOGGER.info(" XML 정보: {}", new String[]{"/WEB-INF/tiles.xml"});
         tilesConfigurer.setCheckRefresh(true);
         return tilesConfigurer;
     }

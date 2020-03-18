@@ -49,7 +49,7 @@ public class SearchService {
         logger.debug("Book 반환: {}", restTemplate.exchange(searchUri, HttpMethod.GET, new HttpEntity<>(httpHeaders), BookItems.class).getBody());
         return (List<BookItems.BookItem>) restTemplate.exchange(searchUri, HttpMethod.GET, new HttpEntity<>(httpHeaders), BookItems.class).getBody().getItems()
                 .stream()
-                .limit(6)
+                .limit(5)
                 .collect(Collectors.toList());
     }
 
@@ -60,7 +60,7 @@ public class SearchService {
         logger.debug("Movie 반환: {}", restTemplate.exchange(searchUri, HttpMethod.GET, new HttpEntity<>(httpHeaders), MovieItems.class).getBody());
         return restTemplate.exchange(searchUri, HttpMethod.GET, new HttpEntity<>(httpHeaders), MovieItems.class).getBody().getItems()
                 .stream()
-                .limit(6)
+                .limit(5)
                 .collect(Collectors.toList());
     }
 }

@@ -1,7 +1,6 @@
 package com.eom.openapi.repository.response;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.Date;

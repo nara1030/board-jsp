@@ -125,6 +125,9 @@
 	   - Spring
 	      - https://www.baeldung.com/spring-xml-vs-java-config
 	      - https://gigas-blog.tistory.com/115
+	   - Composite
+	      - https://www.javaworld.com/article/2074564/a-look-at-the-composite-design-pattern.html
+	      - https://www.dineshonjava.com/composite-view-design-pattern/
 	   - iframe
 	      - https://okky.kr/article/318388
 	```

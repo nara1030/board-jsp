@@ -131,7 +131,20 @@
 	   - iframe
 	      - https://okky.kr/article/318388
 	```
-9. .
+9. CSS 파일 분리  
+	```txt
+	- 기존 스타일대로 불가피하게 HTML 페이지를 여러 개 만들었지만 공통 적용되는 CSS 존재
+	- https://ofcourse.kr/css-course/CSS-%ED%8C%8C%EC%9D%BC-%EB%B6%84%EB%A6%AC
+	```
+10. Bootstrap  
+	```txt
+	- https://tworab.tistory.com/71
+	- https://gmlwjd9405.github.io/2018/05/02/bootstrap-download-and-setting.html
+	- https://brunch.co.kr/@clay1987/131
+	
+	- https://getbootstrap.com/docs/4.4/layout/grid/
+	```
+11. .
 
 ##### [목차로 이동](#목차)
 
@@ -199,5 +212,7 @@
 		<img src="./img/tiles_error_02.png" width="800" height="500"></br>
 	
 9. .
+10. .
+11. .
 
 ##### [목차로 이동](#목차)

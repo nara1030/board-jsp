@@ -11,11 +11,11 @@
         </form>
     </div>
     <div class="classify-container">
-        <div class="container">
+        <div class="content-container">
             <div class="container-title">추천 책</div>
-            <ul>
+            <ul class="inner-container">
                 <c:forEach items="${items.bookItems}" var="book">
-                    <li class="inner-container">
+                    <li class="iterate-container">
                         <div class="img-container"><img src="${book.image}"></div>
                         <div class="text-container">${book.title}</div>
                         <div class="text-container">${book.author}</div>
@@ -24,15 +24,15 @@
                 </c:forEach>
             </ul>
         </div>
-        <div class="container">
+        <div class="content-container">
             <div class="container-title">추천 영화</div>
-            <ul>
+            <ul class="inner-container">
                 <c:forEach items="${items.movieItems}" var="movie">
-                    <li class="inner-container">
+                    <li class="iterate-container">
                         <div class="img-container"><img src="${movie.image}"></div>
                         <div class="text-container">${movie.title}</div>
                         <div class="text-container">${movie.director}</div>
-                        <div class="text-container">${movie.actor}</div>
+                        <!-- <div class="text-container">${movie.actor}</div> -->
                         <div class="text-container">${movie.userRating}</div>
                     </li>
                 </c:forEach>
